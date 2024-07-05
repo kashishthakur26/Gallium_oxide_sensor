@@ -22,15 +22,24 @@ float Galliumoxide::read()
 }
 
 
-
-float Galliumoxide::index(float read_mV) {
-  float voltage = read_mV / 1024.0;
-  int uv_index = voltage / 0.1;
-  return uv_index;
-}
-
 float Galliumoxide::intensity(float read_mV) {
   float voltage = read_mV / 1024.0;
-  int intensity = voltage / 0.1;
+  float intensity = voltage / 0.3;
   return intensity;
 }
+
+float Galliumoxide::uv_index(float read_mV) {
+  float voltage = read_mV / 1024.0;
+  float intensity = voltage / 0.3;
+  int UV_index = intensity / 2.2;
+  return UV_index;
+}
+
+
+float Galliumoxide::uv_dose(float read_mV, int exposure_time) {
+  float voltage = read_mV / 1024.0;
+  float intensity = voltage / 0.3;
+  int UV_dose = intensity * exposure_time;
+  return UV_dose;
+}
+
