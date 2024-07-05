@@ -1,6 +1,6 @@
 #ifndef _Galliumoxide_h
 #define _Galliumoxide_h
-// #include "arduino.h"
+#include "arduino.h"
 
 class Galliumoxide
 {
