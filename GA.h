@@ -1,6 +1,6 @@
-#ifndef _GUVA-S12SD_h
-#define _GUVA-S12SD_h
-#include "arduino.h"
+#ifndef _Galliumoxide_h
+#define _Galliumoxide_h
+// #include "arduino.h"
 
 class Galliumoxide
 {

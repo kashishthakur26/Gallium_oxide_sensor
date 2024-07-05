@@ -34,7 +34,7 @@ float Galliumoxide::uv_index(float read_mV) {
   int UV_index = intensity / 2.2;
   return UV_index;
 }
-
++
 
 float Galliumoxide::uv_dose(float read_mV, int exposure_time) {
   float voltage = read_mV / 1024.0;
