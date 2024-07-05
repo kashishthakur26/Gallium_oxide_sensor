@@ -1,14 +1,14 @@
 #include "arduino.h"
 #include "GA.h"
 
-Galliumoxide::Galliumoxide(int connectedPinNo, float workingVoltage = 5.0, int samplingCount = 1000)
+Gall::Gall(int connectedPinNo, float workingVoltage = 5.0, int samplingCount = 1000)
 {
   port = connectedPinNo;
   v = workingVoltage;
   s = samplingCount;
 }
 
-float Galliumoxide::read()
+float Gall::read()
 {
   float sum = 0;
   for(int i=0; i<s; i++) {
@@ -22,13 +22,13 @@ float Galliumoxide::read()
 }
 
 
-float Galliumoxide::intensity(float read_mV) {
+float Gall::intensity(float read_mV) {
   float voltage = read_mV / 1024.0;
   float intensity = voltage / 0.3;
   return intensity;
 }
 
-float Galliumoxide::uv_index(float read_mV) {
+float Gall::uv_index(float read_mV) {
   float voltage = read_mV / 1024.0;
   float intensity = voltage / 0.3;
   int UV_index = intensity / 2.2;
@@ -36,7 +36,7 @@ float Galliumoxide::uv_index(float read_mV) {
 }
 +
 
-float Galliumoxide::uv_dose(float read_mV, int exposure_time) {
+float Gall::uv_dose(float read_mV, int exposure_time) {
   float voltage = read_mV / 1024.0;
   float intensity = voltage / 0.3;
   int UV_dose = intensity * exposure_time;

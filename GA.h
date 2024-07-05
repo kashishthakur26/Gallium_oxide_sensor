@@ -2,13 +2,13 @@
 #define _GA_h
 #include "arduino.h"
 
-class Galliumoxide
+class Gall
 {
   public:
-    Galliumoxide(int connectedPinNo, float workingVoltage = 5.0, int samplingCount = 1000);
+    Gall(int connectedPinNo, float workingVoltage = 5.0, int samplingCount = 1000);
   public:
     float read();
-    float index(float read_V);
+    float index(float read_mV);
   private:
     int port, s;
     float v;
