@@ -1,11 +1,9 @@
 #include "arduino.h"
 #include "GA.h"
 
-Gall::Gall(int connectedPinNo, float workingVoltage = 5.0, int samplingCount = 1000)
-{
-  port = connectedPinNo;
-  v = workingVoltage;
-  s = samplingCount;
+Gall::Gall(int connectedPinNo, float workingVoltage, int samplingCount)
+    : port(connectedPinNo), v(workingVoltage), s(samplingCount) {
+    // Additional initialization if necessary
 }
 
 float Gall::read()
