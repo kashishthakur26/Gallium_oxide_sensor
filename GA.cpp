@@ -36,7 +36,7 @@ float Gall::dose(float read_mV, int threshold) {
   float intensity = read_mV / 2383.0;
   float summ=0;
   while(1){
-    summ += intensity
+    summ = summ + intensity;
     if(summ >= threshold){
       break;
     }
