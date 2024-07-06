@@ -21,8 +21,7 @@ float Gall::read()
 
 
 float Gall::intensity(float read_mV) {
-  float voltage = read_mV / 1024.0;
-  float intensity = voltage / 0.3;
+  float intensity = read_mV / 2383.0;
   return intensity;
 }
 
@@ -34,9 +33,9 @@ float Gall::index(float read_mV) {
 }
 
 float Gall::dose(float read_mV, int exposure_time) {
-  float voltage = read_mV / 1024.0;
-  float intensity = voltage / 0.3;
-  int UV_dose = intensity * exposure_time;
+  float intensity = read_mV / 2383.0;
+  int UV_dose = intensity ;
+  delay(1000);
   return UV_dose;
 }
 
