@@ -21,7 +21,27 @@ float Gall::read()
 
 
 float Gall::intensity(float read_mV) {
-  float intensity = read_mV / 2383.0;
+  if (read_mV > 440){
+    float intensity = read_mV / 274.0;
+  }
+  elif ( read_mv > 400){
+    float intensity = read_mV / 620.0;
+  }
+  elif ( read_mv > 350){
+    float intensity = read_mV / 1170.0;
+  }
+  elif ( read_mv > 300){
+    float intensity = read_mV / 2395.0;
+  }
+  elif ( read_mv > 200){
+    float intensity = read_mV / 2383.0;
+  }
+  elif ( read_mv > 150){
+    float intensity = read_mV / 4663.0;
+  }
+  else {
+    float intensity = read_mV / 4804.0;
+  }
   return intensity;
 }
 
