@@ -32,10 +32,17 @@ float Gall::index(float read_mV) {
   return UV_index;
 }
 
-float Gall::dose(float read_mV, int exposure_time) {
+float Gall::dose(float read_mV, int threshold) {
   float intensity = read_mV / 2383.0;
-  int UV_dose = intensity ;
-  delay(1000);
-  return UV_dose;
+  float summ=0;
+  while(1){
+    summ += intensity
+    if(summ >= threshold){
+      break;
+    }
+    delay(1000);
+
+  }
+  return summ;
 }
 
